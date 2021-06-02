@@ -1,7 +1,10 @@
 package com.sameer.bookstore.entity;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -10,7 +13,6 @@ import javax.persistence.*;
         @NamedQuery(name = "Users.getAll", query = "SELECT u FROM Users u")
 })
 @Data
-@ToString
 @Table(name = "users")
 public class Users {
     @Id
