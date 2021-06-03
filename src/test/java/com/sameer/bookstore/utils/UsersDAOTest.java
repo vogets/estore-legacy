@@ -12,9 +12,9 @@ import java.util.List;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class JPAHibernateCRUDTest extends JPAHibernateTest {
+public class UsersDAOTest extends JPAHibernateTest {
 
-    private static Logger logger = LoggerFactory.getLogger(JPAHibernateCRUDTest.class);
+    private static Logger logger = LoggerFactory.getLogger(UsersDAOTest.class);
 
     @Test
     public void testGetObjectById_success() {
