@@ -6,6 +6,12 @@
              version="2.1">
     <persistence-unit name="BookStoreWebsite">
         <class>com.sameer.bookstore.entity.Users</class>
+        <class>com.sameer.bookstore.entity.Book</class>
+        <class>com.sameer.bookstore.entity.BookOrder</class>
+        <class>com.sameer.bookstore.entity.Category</class>
+        <class>com.sameer.bookstore.entity.Customer</class>
+        <class>com.sameer.bookstore.entity.OrderDetail</class>
+        <class>com.sameer.bookstore.entity.Review</class>
         <properties>
             <!-- Configuring JDBC properties -->
             <property name="javax.persistence.jdbc.url"

@@ -2,6 +2,7 @@ package com.sameer.bookstore.entity;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 })
 @Data
 @ToString
+@EqualsAndHashCode
 @Table(name = "users")
 public class Users {
     @Id

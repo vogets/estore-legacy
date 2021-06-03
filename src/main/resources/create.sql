@@ -33,7 +33,7 @@ CREATE TABLE book
     author           varchar(64)      NOT NULL,
     description      text             NOT NULL,
     isbn             varchar(15)      NOT NULL,
-    image            bytea            NOT NULL,
+    image            bytea            ,
     price            double precision NOT NULL,
     publish_date     date             NOT NULL,
     last_update_time timestamp(0)     NOT NULL,

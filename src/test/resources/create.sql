@@ -125,15 +125,50 @@ ALTER SEQUENCE book_order_seq RESTART WITH 22;
 CREATE
 INDEX customer_fk_2_idx ON book_order (customer_id);
 
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-CREATE TABLE order_detail
+
+create table if not exists order_detail
 (
-    order_id int DEFAULT NULL,
-    book_id  int DEFAULT NULL,
-    quantity int              NOT NULL,
-    subtotal double precision NOT NULL,
-    CONSTRAINT book_fk_2 FOREIGN KEY (book_id) REFERENCES book (book_id) ON DELETE cascade ON UPDATE cascade,
-    CONSTRAINT order_fk FOREIGN KEY (order_id) REFERENCES book_order (order_id) ON DELETE cascade ON UPDATE cascade
+    order_id
+    integer
+    constraint
+    order_fk
+    references
+    book_order
+    on
+    update
+    cascade
+    on
+    delete
+    cascade,
+    book_id
+    integer
+    constraint
+    book_fk_2
+    references
+    book
+    on
+    update
+    cascade
+    on
+    delete
+    cascade,
+    quantity
+    integer
+    not
+    null,
+    subtotal
+    double
+    precision
+    not
+    null,
+    id
+    integer
+    not
+    null
+    constraint
+    order_detail_pk
+    primary
+    key
 );
 
 CREATE

@@ -22,9 +22,17 @@ public class JPAHibernateTest {
     protected static EntityManager em;
 
     @BeforeClass
-    public static void init() throws FileNotFoundException, SQLException {
-        emf = Persistence.createEntityManagerFactory("BookStoreWebsite");
-        em = emf.createEntityManager();
+    public static void init()  {
+        try
+        {
+            emf = Persistence.createEntityManagerFactory("BookStoreWebsite");
+            em = emf.createEntityManager();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @AfterClass
@@ -45,6 +53,10 @@ public class JPAHibernateTest {
                     RunScript.execute(connection, new FileReader(script));
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException("could not initialize with script");
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
                 }
             }
         });

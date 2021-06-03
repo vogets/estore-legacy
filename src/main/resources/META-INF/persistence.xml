@@ -6,11 +6,25 @@
              version="2.1">
     <persistence-unit name="BookStoreWebsite">
         <class>com.sameer.bookstore.entity.Users</class>
+        <class>com.sameer.bookstore.entity.Book</class>
+        <class>com.sameer.bookstore.entity.BookOrder</class>
+        <class>com.sameer.bookstore.entity.Category</class>
+        <class>com.sameer.bookstore.entity.Customer</class>
+        <class>com.sameer.bookstore.entity.OrderDetail</class>
+        <class>com.sameer.bookstore.entity.Review</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://100.0.0.2:5432/estore"/>
             <property name="javax.persistence.jdbc.user" value="estore"/>
             <property name="javax.persistence.jdbc.password" value="Kites#123"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="toplink.jdbc.url" value="jdbc:postgresql://100.0.0.2:5432/estore"/>
+            <property name="toplink.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://100.0.0.2:5432/estore"/>
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:postgresql://100.0.0.2:5432/estore"/>
+            <property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://100.0.0.2:5432/estore"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
         </properties>
     </persistence-unit>
 </persistence>
