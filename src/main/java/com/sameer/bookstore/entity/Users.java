@@ -1,7 +1,8 @@
 package com.sameer.bookstore.entity;
 
 
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 

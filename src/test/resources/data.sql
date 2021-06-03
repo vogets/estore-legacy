@@ -1,6 +1,7 @@
-DELETE FROM users;
-INSERT INTO users (email,password,full_name) VALUES
-('sameervogeti@gmail.com','Test#123,','sameer chandra vogeti');
+DELETE
+FROM users;
+INSERT INTO users (email, password, full_name)
+VALUES ('sameervogeti@gmail.com', 'Test#123,', 'sameer chandra vogeti');
 
 /*
 DELETE FROM customer;

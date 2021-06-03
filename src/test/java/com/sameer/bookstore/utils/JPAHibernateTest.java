@@ -27,8 +27,15 @@ public class JPAHibernateTest {
         em = emf.createEntityManager();
     }
 
+    @AfterClass
+    public static void tearDown() {
+        em.clear();
+        em.close();
+        emf.close();
+    }
+
     @Before
-    public void initializeDatabase(){
+    public void initializeDatabase() {
         Session session = em.unwrap(Session.class);
         session.doWork(new Work() {
             @Override
@@ -41,12 +48,5 @@ public class JPAHibernateTest {
                 }
             }
         });
-    }
-
-    @AfterClass
-    public static void tearDown(){
-        em.clear();
-        em.close();
-        emf.close();
     }
 }

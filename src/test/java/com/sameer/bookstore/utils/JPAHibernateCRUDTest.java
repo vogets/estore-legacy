@@ -9,7 +9,8 @@ import org.slf4j.LoggerFactory;
 import javax.persistence.RollbackException;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class JPAHibernateCRUDTest extends JPAHibernateTest {
 
@@ -21,14 +22,14 @@ public class JPAHibernateCRUDTest extends JPAHibernateTest {
         Users users = em.find(Users.class, 1);
         logger.info(users.toString());
         assertNotNull(users);
-        assertTrue(users.getUserId()==1);
+        assertTrue(users.getUserId() == 1);
     }
 
     @Test
     public void testGetAll_success() {
         logger.info("Testing Get All Users");
         List<Users> users = em.createNamedQuery("Users.getAll", Users.class).getResultList();
-        assertTrue(users.size()==1);
+        assertTrue(users.size() == 1);
 
     }
 
@@ -36,10 +37,10 @@ public class JPAHibernateCRUDTest extends JPAHibernateTest {
     public void testPersist_success() {
         logger.info("Testing Persist User");
         em.getTransaction().begin();
-        String email="test@test.com";
-        String fullName="Test";
-        String password="Password";
-        Users user=new Users();
+        String email = "test@test.com";
+        String fullName = "Test";
+        String password = "Password";
+        Users user = new Users();
         user.setEmail(email);
         user.setPassword(password);
         user.setFullName(fullName);
@@ -50,23 +51,23 @@ public class JPAHibernateCRUDTest extends JPAHibernateTest {
         List<Users> users = em.createNamedQuery("Users.getAll", Users.class).getResultList();
 
         assertNotNull(users);
-assertTrue(users.size()==2);
+        assertTrue(users.size() == 2);
     }
 
     @Test(expected = RollbackException.class)
-    public void testDelete_success(){
+    public void testDelete_success() {
         logger.info("Testing Delete User");
         Users users = em.find(Users.class, 1);
 
-        logger.info("User to be deleted is :"+users);
+        logger.info("User to be deleted is :" + users);
         em.getTransaction().begin();
         em.remove(users);
         em.getTransaction().commit();
 
         List<Users> books = em.createNamedQuery("Users.getAll", Users.class).getResultList();
 
-        logger.info("Size after deletion: "+books.size());
-        assertTrue(books.size()==0);
+        logger.info("Size after deletion: " + books.size());
+        assertTrue(books.size() == 0);
     }
 
 }
